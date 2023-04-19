@@ -2,10 +2,12 @@ package de.neusta.notebookkotlinsimple.infrastructure.repository.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
+import jakarta.persistence.Table
 import java.time.LocalDateTime
 import java.util.*
 
 @Entity
+@Table(name = "note")
 class NoteEntity(
 
     @Id
