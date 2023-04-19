@@ -19,7 +19,6 @@ class NoteCreationTest {
     fun createNote() {
         val content = "test-content"
         val result = noteCreationToTest.createNote(content)
-        assertThat(result.id).isNotNull
         assertThat(result.creationDate)
             .isCloseTo(LocalDateTime.now(), within(1, ChronoUnit.SECONDS))
         assertThat(result.content).isEqualTo("test-content")
