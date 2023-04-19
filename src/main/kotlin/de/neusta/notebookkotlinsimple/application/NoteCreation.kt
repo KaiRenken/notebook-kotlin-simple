@@ -10,8 +10,6 @@ class NoteCreation(private val noteRepository: NoteRepository) {
     fun createNote(content: String): Note {
         val createdNote = Note(content = content)
 
-        noteRepository.store(createdNote)
-
-        return createdNote
+        return noteRepository.store(createdNote)
     }
 }

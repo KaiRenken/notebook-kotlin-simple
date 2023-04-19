@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository
 @Repository
 class NoteRepositoryImpl(private val noteJpaRepository: NoteJpaRepository) : NoteRepository {
 
-    override fun store(note: Note) {
-        noteJpaRepository.save(mapToEntity(note))
+    override fun store(note: Note): Note {
+        return mapToDomain(
+            noteJpaRepository.save(mapToEntity(note))
+        )
     }
 
     override fun findAll(): List<Note> {

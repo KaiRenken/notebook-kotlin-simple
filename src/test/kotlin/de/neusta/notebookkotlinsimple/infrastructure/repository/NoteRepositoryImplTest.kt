@@ -20,8 +20,10 @@ class NoteRepositoryImplTest : AbstractDatabaseTest() {
     fun storeNote() {
         val noteToStore = aTestNote().build()
 
-        noteRepositoryImpl.store(noteToStore)
-
+        val result = noteRepositoryImpl.store(noteToStore)
+        assertThat(result.id).isEqualTo(noteToStore.id)
+        assertThat(result.creationDate).isEqualTo(noteToStore.creationDate)
+        assertThat(result.content).isEqualTo(noteToStore.content)
         assertThat(noteJpaRepository.count()).isEqualTo(1)
 
         val storedNote = noteJpaRepository.findAll()[0]
