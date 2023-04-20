@@ -3,6 +3,7 @@ package de.neusta.notebookkotlinsimple.application
 import de.neusta.notebookkotlinsimple.domain.Note
 import de.neusta.notebookkotlinsimple.domain.NoteRepository
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class NoteCreation(private val noteRepository: NoteRepository) {
